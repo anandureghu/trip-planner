@@ -38,8 +38,7 @@ const Trip = () => {
   useEffect(() => {
     setFetching(true);
     const dayPhotos: PexelsSearchResponse[] = [];
-    trip &&
-      trip.itinerary.length > 0 &&
+    if (trip && trip.itinerary.length > 0)
       trip.itinerary.forEach((day) => {
         const fetchDayPhoto = async () => {
           const response = await fetchPhotos({
