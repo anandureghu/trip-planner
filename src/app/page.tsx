@@ -23,6 +23,8 @@ export default function Home() {
       toast.error("Please enter a place to visit");
       return;
     }
+
+    localStorage.setItem("place", place);
     setIsLoading(true);
     httpService
       .post("/gemini", {
